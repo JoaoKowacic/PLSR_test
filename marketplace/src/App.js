@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import CustomNavbar from './Navbar';
+import ProductList from './ProductList';
+import FilterByCategory from './FilterByCategory';
+import data from './database/data.json';
 
-function App() {
+const App = () => {
+  const categories = Array.from(new Set(data.map((product) => product.sport)));
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CustomNavbar />
+      <FilterByCategory categories={categories} onCategoryChange={(category) => console.log(category)} />
+      <ProductList products={data} />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Button, Modal } from 'react-bootstrap';
+import ProductModal from './ProductModal';
 
 const ProductList = ({ products }) => {
   const [showModal, setShowModal] = useState(false);
