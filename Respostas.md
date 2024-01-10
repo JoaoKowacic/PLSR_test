@@ -19,7 +19,6 @@ Vantagens do query builder: controle, desempenho, flexibilidade.
 Desvantagens do query builder: código naturalmente mais inchado, manutenção mais complexa.
 
 6- 
-**code
 SELECT
     LEAST(j1.nome, j2.nome) AS jogador1_nome,
     GREATEST(j1.nome, j2.nome) AS jogador2_nome
@@ -36,4 +35,3 @@ GROUP BY
     jogador1_nome, jogador2_nome
 HAVING
     COUNT(*) > 2;
-**
