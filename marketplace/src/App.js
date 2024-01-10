@@ -1,19 +1,22 @@
 import React from 'react';
-import CustomNavbar from './Navbar';
-import ProductList from './ProductList';
-import FilterByCategory from './FilterByCategory';
-import data from './database/data.json';
+import './styles/App.css';
+import ProductsPage from './pages/ProductsPage';
+import NavigationBar from './components/NavigationBar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
 
-const App = () => {
-  const categories = Array.from(new Set(data.map((product) => product.sport)));
-
+function App() {
   return (
-    <div className="App">
-      <CustomNavbar />
-      <FilterByCategory categories={categories} onCategoryChange={(category) => console.log(category)} />
-      <ProductList products={data} />
-    </div>
+    <Router>
+      <NavigationBar />
+      <Routes>
+        <Route path="/products" Component={ProductsPage} />   
+        <Route path='/' Component={ProductsPage}/>
+        <Route path='/home' Component={ProductsPage}/>
+        <Route path='/login' Component={LoginPage}/>
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
