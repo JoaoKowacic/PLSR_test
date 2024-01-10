@@ -20,11 +20,11 @@ const ProductRow = ({ image, name, details, price }) => {
           <Button variant="primary" onClick={handleShow}>
             Show Details
           </Button>
-          <Modal show={show} onHide={handleClose}>
+          <Modal show={show} onHide={handleClose} >
             <Modal.Header closeButton>
               <Modal.Title>{name}</Modal.Title>
             </Modal.Header>
-            <Modal.Body>{details}</Modal.Body>
+            <Modal.Body className="modal-content">{details}</Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
                 Close
