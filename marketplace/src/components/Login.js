@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-export default class Login extends Component {
+
+class Login extends Component {
     render() {
         return (
             <form>
@@ -41,3 +42,5 @@ export default class Login extends Component {
         );
     }
 }
+
+export default Login

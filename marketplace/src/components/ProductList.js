@@ -23,7 +23,6 @@ class Filter extends Component {
   }
 }
 
-
 class ProductList extends Component {
   constructor(props) {
     super(props);
